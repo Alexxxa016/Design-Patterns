@@ -1,0 +1,21 @@
+@startuml
+class ConsoleView {
+  + showMessage(message: String)
+  + getInput(prompt: String): String
+}
+
+class StudentController {
+  + addStudent(student: Student)
+  + updateStudent(name: String, ...)
+}
+
+class Student {
+  - int studentId
+  - String name
+  - int age
+  - double grades
+}
+
+ConsoleView --> StudentController : interacts
+StudentController --> Student : updates/retrieves data
+@enduml
